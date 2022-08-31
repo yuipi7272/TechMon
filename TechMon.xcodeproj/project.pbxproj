@@ -30,6 +30,8 @@
 		5826FB6D28BE50ED00EEB61A /* SE_charge.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5826FB5B28BE50ED00EEB61A /* SE_charge.mp3 */; };
 		5826FB6E28BE50ED00EEB61A /* lobby.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5826FB5C28BE50ED00EEB61A /* lobby.mp3 */; };
 		5826FB6F28BE50ED00EEB61A /* misaki_gothic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5826FB5E28BE50ED00EEB61A /* misaki_gothic.ttf */; };
+		5826FB7128BEFCAA00EEB61A /* BattleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5826FB7028BEFCAA00EEB61A /* BattleViewController.swift */; };
+		5826FB7328BEFCE900EEB61A /* LobbyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5826FB7228BEFCE900EEB61A /* LobbyViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +60,8 @@
 		5826FB5B28BE50ED00EEB61A /* SE_charge.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = SE_charge.mp3; sourceTree = "<group>"; };
 		5826FB5C28BE50ED00EEB61A /* lobby.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = lobby.mp3; sourceTree = "<group>"; };
 		5826FB5E28BE50ED00EEB61A /* misaki_gothic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = misaki_gothic.ttf; sourceTree = "<group>"; };
+		5826FB7028BEFCAA00EEB61A /* BattleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BattleViewController.swift; sourceTree = "<group>"; };
+		5826FB7228BEFCE900EEB61A /* LobbyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LobbyViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +102,8 @@
 				5826FB3E28BE509900EEB61A /* Assets.xcassets */,
 				5826FB4028BE509900EEB61A /* LaunchScreen.storyboard */,
 				5826FB4328BE509900EEB61A /* Info.plist */,
+				5826FB7028BEFCAA00EEB61A /* BattleViewController.swift */,
+				5826FB7228BEFCE900EEB61A /* LobbyViewController.swift */,
 			);
 			path = TechMon;
 			sourceTree = "<group>";
@@ -244,9 +250,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5826FB7128BEFCAA00EEB61A /* BattleViewController.swift in Sources */,
 				5826FB6628BE50ED00EEB61A /* TechMonManager.swift in Sources */,
 				5826FB3A28BE509900EEB61A /* ViewController.swift in Sources */,
 				5826FB6728BE50ED00EEB61A /* Character.swift in Sources */,
+				5826FB7328BEFCE900EEB61A /* LobbyViewController.swift in Sources */,
 				5826FB3628BE509900EEB61A /* AppDelegate.swift in Sources */,
 				5826FB3828BE509900EEB61A /* SceneDelegate.swift in Sources */,
 			);

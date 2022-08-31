@@ -27,7 +27,6 @@ class Character {
     
     // initで全て使えるように設定する
     init(name: String, imageName: String, attackPoint: Int, maxHP: Int, maxTP: Int, maxMP: Int) {
-        
         self.name = name
         self.image = UIImage(named: imageName)
         self.attackPoint = attackPoint
