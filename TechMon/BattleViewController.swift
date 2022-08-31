@@ -102,8 +102,12 @@ class BattleViewController: UIViewController {
     // 勝敗判定をする
     func judgeBattle() {
         if player.currentHP <= 0 {
+            player.currentHP = 0
+            updateUI()
             finishBattle(vanishImageView: playerImageView, isPlayerWin: false)
         } else if enemy.currentHP <= 0 {
+            enemy.currentHP = 0
+            updateUI()
             finishBattle(vanishImageView: enemyImageView, isPlayerWin: true)
         }
     }
@@ -114,8 +118,14 @@ class BattleViewController: UIViewController {
             techMonManager.damageAnimation(imageView: enemyImageView)
             techMonManager.playSE(fileName: "SE_attack")
             
-            // 敵のHPを減少
-            enemy.currentHP = enemy.currentHP - player.attackPoint
+            // 敵のHPを減少(一定の確率(30%)で2倍の攻撃力になる)
+            let randomNum = Int.random(in: 0...9)
+            if randomNum < 3 {
+                enemy.currentHP = enemy.currentHP - player.attackPoint * 2
+            } else {
+                enemy.currentHP = enemy.currentHP - player.attackPoint
+            }
+            
             
             // 1回の攻撃でTPが10回復
             player.currentTP += 10
@@ -163,9 +173,13 @@ class BattleViewController: UIViewController {
         techMonManager.damageAnimation(imageView: playerImageView)
         techMonManager.playSE(fileName: "SE_attack")
         
-        // プレイヤーのHPを減少
-        player.currentHP = player.currentHP - enemy.attackPoint
-        
+        // プレイヤーのHPを減少(一定の確率(30%)で2倍の攻撃力になる)
+        let randomNum = Int.random(in: 0...9)
+        if randomNum < 3 {
+            player.currentHP = player.currentHP - enemy.attackPoint * 2
+        } else {
+            player.currentHP = player.currentHP - enemy.attackPoint
+        }
         // 勝敗を判定
         judgeBattle()
     }
@@ -179,6 +193,7 @@ class BattleViewController: UIViewController {
         isPlayerAttackAvailable = false
         
         var finishMessage: String = ""
+        
         if isPlayerWin {
             techMonManager.playSE(fileName: "SE_fanfare")
             finishMessage = "勇者の勝利！！"
@@ -190,9 +205,12 @@ class BattleViewController: UIViewController {
         let alert = UIAlertController(title: "バトル終了",
                                       message: finishMessage,
                                       preferredStyle: .alert)
+        
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { _ in
             self.dismiss(animated: true, completion: nil)
+            self.techMonManager.resetStatus()
         }))
+        present(alert, animated: true, completion: nil)
     }
     
     /*
